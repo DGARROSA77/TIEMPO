@@ -8,12 +8,14 @@
     <title>Weather</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Rubik:wght@300&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <div class="weather-app">
         <div class="container">
-            <h3 class="brand">the weather</h3>
+            <h3 class="brand">The weather</h3>
             <div>
                 <h1 class="temp">16&#176;</h1>
                 <div class="city-time">
@@ -23,49 +25,50 @@
                         <span class="date">Saturday March 12</span>
                     </small>
                 </div>
-            </div>
 
-            <div class="weather">
-                <img src="./Assets/Icons/day/113.png" class="icon" alt="icon" width="50" height="50">
-                <span class="condition">Cloudy</span>
+
+                <div class="weather">
+                    <img src="./Assets/Icons/day/113.png" class="icon" alt="icon" width="50" height="50">
+                    <span class="condition">Cloudy</span>
+                </div>
             </div>
         </div>
+
+
+        <div class="panel">
+            <form action="" id="locationInput">
+                <input type="text" class="search" placeholder="Search  Location...">
+                <button type="submit" class="submit">
+                    <i class='bx bx-search'></i>
+                </button>
+            </form>
+
+
+
+            <ul class="cities">
+                <li class="city">Madrid</li>
+                <li class="city">Berlin</li>
+                <li class="city">New York</li>
+                <li class="city">Tokyo</li>
+            </ul>
+
+            <ul class="details">
+                <h4>Weather Details</h4>
+                <li>
+                    <span>Cloudy</span>
+                    <span class="cloud">89%</span>
+                </li>
+                <li>
+                    <span>Humidity</span>
+                    <span class="cloud">64%</span>
+                </li>
+                <li>
+                    <span>Wind</span>
+                    <span class="cloud">8km/h</span>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <div class="panel">
-        <form action="" id="locationInput">
-            <input type="text" class="search" placeholder="Search Location...">
-            <button type="submit" class="submit">
-                <i class='bx bx-search'></i>
-            </button>
-        </form>
-
-
-
-        <ul class="cities">
-            <li class="city">Madrid</li>
-            <li class="city">Berlin</li>
-            <li class="city">New York</li>
-            <li class="city">Tokyo</li>
-        </ul>
-
-        <ul class="details">
-            <h4>Weather Details</h4>
-            <li>
-                <span>Cloudy</span>
-                <span class="cloud">89%</span>
-            </li>
-            <li>
-                <span>Humidity</span>
-                <span class="cloud">64%</span>
-            </li>
-            <li>
-                <span>Wind</span>
-                <span class="cloud">8km/h</span>
-            </li>
-        </ul>
-    </div>
-
 </body>
 
 </html>
