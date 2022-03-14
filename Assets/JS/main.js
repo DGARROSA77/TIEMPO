@@ -13,7 +13,8 @@ const search = document.querySelector('.search');
 const btn = document.querySelector('.submit');
 const cities = document.querySelectorAll('.city');
 
-//Default city when the pageg Loads
+
+//Default city when the page Loads
 let cityInput = "Madrid";
 
 //Add click event to each city in the panel
@@ -53,13 +54,13 @@ function dayOfTheWeek(day, month, year) {
         "Friday",
         "Saturday"
     ];
-    return weekday[new Date(`${day}/${month},${year}`).getDay()];
+    return weekday[new Date(`${day}/${month}/${year}`).getDay()];
 };
+
 
 //Function that fetches and displays the data from the weather API
 function fetchWeatherData() {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=d9941db7f18b413dbaf180703221203=${cityInput}`)
-        // fetch(`http://api.weatherapi.com/v1/current.json?key=&q=Madrid&aqi=no`)
+    fetch(`http://api.weatherapi.com/v1/current.json?key=347d1a86162a4cdc87f110353221403&q=${cityInput}`)
 
         .then(response => response.json())
         .then(data => {
@@ -72,14 +73,15 @@ function fetchWeatherData() {
             const y = parseInt(date.substr(0, 4));
             const m = parseInt(date.substr(5, 2));
             const d = parseInt(date.substr(8, 2));
-            const time = data.substr(11);
+            const time = date.substr(11, 5);
 
             dateOutPut.innerHTML = `${dayOfTheWeek(d, m, y)} ${d}, ${m} ${y}`;
             timeOutPut.innerHTML = time;
             nameOutPut.innerHTML = data.location.name;
 
             const iconId = data.current.condition.icon.substr("//cdn.weatherapi.com/weather/64x64/".length);
-            icon.src = "./icons/" + iconId;
+            icon.src = "./Assets/icons/" + iconId;
+
 
             cloudOutPut.innerHTML = data.current.cloud + "%";
             humidityOutPut.innerHTML = data.current.humidity + "%";
@@ -93,10 +95,11 @@ function fetchWeatherData() {
             }
 
             if (code == 1000) {
-                app.style.backgroundImage = `url(./images/${timeOfDay}/clear.jpg)`;
+                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/sol.jpg)`;
                 btn.style.background = "#e5ba92";
                 if (timeOfDay == "night") {
                     btn.style.background = "#181e27";
+                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/despejado.jpg)`;
                 }
             }
 
@@ -113,10 +116,11 @@ function fetchWeatherData() {
                 code == 1279 ||
                 code == 1282
             ) {
-                app.style.backgroundImage = `url(./images/${timeOfDay}/cloudy.jpg)`;
+                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/nublado.jpg)`;
                 btn.style.background = "#fa6d1b";
                 if (timeOfDay == "night") {
                     btn.style.background = "#181e27";
+                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/nubes.jpg)`;
                 }
             } else if (
                 code == 1063 ||
@@ -138,16 +142,18 @@ function fetchWeatherData() {
                 code == 1249 ||
                 code == 1252
             ) {
-                app.style.backgroundImage = `url(./images/${timeOfDay}/rainy.jpg)`;
+                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/lluvioso.jpg)`;
                 btn.style.background = "#647d75";
                 if (timeOfDay == "night") {
                     btn.style.background = "#325c80";
+                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/lluvia.jpg)`;
                 }
             } else {
-                app.style.backgroundImage = `url(./images/${timeOfDay}/snowy.jpg)`;
+                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/nieve.jpg)`;
                 btn.style.background = "#4d72aa";
                 if (timeOfDay == "night") {
                     btn.style.background = "#1b1b1b";
+                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/despejado.jpg)`;
                 }
             }
 
