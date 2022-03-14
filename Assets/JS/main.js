@@ -60,7 +60,7 @@ form.addEventListener('submit', (e) => {
 
 //Function that fetches and displays the data from the weather API
 function fetchWeatherData() {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=347d1a86162a4cdc87f110353221403&q=${cityInput}`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=347d1a86162a4cdc87f110353221403&q=${cityInput}`)
 
         .then(response => response.json())
         .then(data => {
