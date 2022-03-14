@@ -14,7 +14,7 @@ h1,h3{
 
 .weather-app{
     min-height: 100vh;
-    background-image: url(https://images.unsplash.com/photo-1536244636800-a3f74db0f3cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1092&q=80);
+    background-image: url(./Assets/Img/day/nublado.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -165,4 +165,27 @@ h1,h3{
     justify-content: space-between;
     align-items: center;    
 }
+
+@media screen and (max-width: 800px) {
+    .panel, .container{
+        position: relative;
+        width: 100%;
+        top: initial;
+    }
+  
+}
+
+@media screen and (max-width: 500px){
+    html{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 300px){
+    .weather-app{
+        min-height: 40em;
+    }
+}
+
+
 
