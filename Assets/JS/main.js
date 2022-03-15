@@ -80,7 +80,7 @@ function fetchWeatherData() {
             nameOutPut.innerHTML = data.location.name;
 
             const iconId = data.current.condition.icon.substr("//cdn.weatherapi.com/weather/64x64/".length);
-            icon.src = "./Assets/icons/" + iconId;
+            icon.src = "./Assets/Icons/" + iconId;
 
 
             cloudOutPut.innerHTML = data.current.cloud + "%";
