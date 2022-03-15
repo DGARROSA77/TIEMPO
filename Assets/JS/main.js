@@ -95,11 +95,11 @@ function fetchWeatherData() {
             }
 
             if (code == 1000) {
-                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/sol.jpg)`;
+                app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/sol.jpg)`;
                 btn.style.background = "#e5ba92";
                 if (timeOfDay == "night") {
                     btn.style.background = "#181e27";
-                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/despejado.jpg)`;
+                    app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/despejado.jpg)`;
                 }
             }
 
@@ -116,11 +116,11 @@ function fetchWeatherData() {
                 code == 1279 ||
                 code == 1282
             ) {
-                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/nublado.jpg)`;
+                app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/nublado.jpg)`;
                 btn.style.background = "#fa6d1b";
                 if (timeOfDay == "night") {
                     btn.style.background = "#181e27";
-                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/nubes.jpg)`;
+                    app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/nubes.jpg)`;
                 }
             } else if (
                 code == 1063 ||
@@ -142,18 +142,18 @@ function fetchWeatherData() {
                 code == 1249 ||
                 code == 1252
             ) {
-                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/lluvioso.jpg)`;
+                app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/lluvioso.jpg)`;
                 btn.style.background = "#647d75";
                 if (timeOfDay == "night") {
                     btn.style.background = "#325c80";
-                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/lluvia.jpg)`;
+                    app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/lluvia.jpg)`;
                 }
             } else {
-                app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/nieve.jpg)`;
+                app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/nieve.jpg)`;
                 btn.style.background = "#4d72aa";
                 if (timeOfDay == "night") {
                     btn.style.background = "#1b1b1b";
-                    app.style.backgroundImage = `url(./Assets/img/${timeOfDay}/despejado.jpg)`;
+                    app.style.backgroundImage = `url(./Assets/Img/${timeOfDay}/despejado.jpg)`;
                 }
             }
 
